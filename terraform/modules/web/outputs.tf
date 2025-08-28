@@ -1,6 +1,6 @@
 output "web_api_base_url" {
   description = "Public base URL for the web page"
-  value       = aws_apigatewayv2_api.web_api.api_endpoint
+  value       = aws_apigatewayv2_api.web_http_api.api_endpoint
 }
 
 output "web_table_name" {

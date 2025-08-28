@@ -9,7 +9,7 @@ resource "aws_dynamodb_table" "web_string" {
   }
 
   tags = {
-    Project = local.resources_prefix
+    Project = local.app_name
   }
 }
 

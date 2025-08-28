@@ -1,5 +1,5 @@
 resource "aws_apigatewayv2_api" "web_http_api" {
-  name          = "${local.resources_prefix}-api"
+  name          = "${local.app_name}-api"
   protocol_type = "HTTP"
 }
 
@@ -25,7 +25,7 @@ resource "aws_apigatewayv2_stage" "web_api_stage" {
 resource "aws_lambda_permission" "web_http_api_gateway_invoke" {
   statement_id  = "AllowInvokeFromHttpApi"
   action        = "lambda:InvokeFunction"
-  function_name = aws_lambda_function.handler.function_name
+  function_name = aws_lambda_function.get_web_page.function_name
   principal     = "apigateway.amazonaws.com"
   source_arn    = "${aws_apigatewayv2_api.web_http_api.execution_arn}/*/*"
 }

@@ -18,12 +18,12 @@ resource "aws_lambda_function" "get_web_page" {
   timeout     = var.lambda_timeout_seconds
 
   tags = {
-    Project = local.resources_prefix
+    Project = local.app_name
   }
 }
 
 data "archive_file" "web_page_lambda_zip" {
   type        = "zip"
   source_dir  = "${path.module}/lambda_fn"
-  output_path = "${path.module}/build/${local.resources_prefix}.zip"
+  output_path = "${path.module}/build/${local.app_name}.zip"
 }

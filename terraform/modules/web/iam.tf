@@ -10,7 +10,7 @@ data "aws_iam_policy_document" "web_lambda_assume_role" {
 }
 
 resource "aws_iam_role" "web_lambda_exec_role" {
-  name               = "${local.resources_prefix}-lambda-role"
+  name               = "${local.app_name}-lambda-role"
   assume_role_policy = data.aws_iam_policy_document.web_lambda_assume_role.json
 }
 
@@ -31,7 +31,7 @@ data "aws_iam_policy_document" "web_string_dynamodb_read" {
 }
 
 resource "aws_iam_policy" "web_dynamodb_read" {
-  name   = "${local.resources_prefix}-dynamodb-read"
+  name   = "${local.app_name}-dynamodb-read"
   policy = data.aws_iam_policy_document.web_string_dynamodb_read.json
 }
 
