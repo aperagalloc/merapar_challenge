@@ -1,6 +1,6 @@
 resource "aws_lambda_function" "get_web_page" {
   function_name = "get_web_page"
-  handler       = "lambda_function.lambda_handler"
+  handler       = "web_content.lambda_handler"
   runtime       = "python3.11"
   role          = aws_iam_role.web_lambda_exec_role.arn
 
