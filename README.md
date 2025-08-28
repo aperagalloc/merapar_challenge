@@ -44,8 +44,6 @@ In order to do this, the web page string content which gets pulled from DynamoDB
 ./change_web_page_string.sh
 ```
 
-The specific string to be changed needs to be manually provided by modifiying the script on line 6:
-
-```bash
-   --item '{"id": {"S": "current"}, "value": {"S": "hello, string has changed!"}}' \
-```
+The script works by passing either 0 or 1 parameters.
+- If you **DON'T** pass a parameter, then the string content will default to: "**hello, string has changed!**"
+ - If you **DO** pass a parameter, then its value will be saved as the string content.
