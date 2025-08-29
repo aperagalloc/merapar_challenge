@@ -21,7 +21,8 @@ export AWS_DEFAULT_REGION=us-east-1
 If the tfstate is going to be saved into an S3 bucket location, then run the following bash script to create it:
 
 ```bash
-./create_tf_state_required_resources
+chmod +x ./create_tf_state_required_resources.sh
+./create_tf_state_required_resources.sh
 ```
 
 ## Deploy
@@ -41,6 +42,7 @@ terraform apply tfplan
 In order to do this, the web page string content which gets pulled from DynamoDB needs to be changed using this bash script:
 
 ```bash
+chmod +x ./change_web_page_string.sh
 ./change_web_page_string.sh
 ```
 
